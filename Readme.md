@@ -1,5 +1,7 @@
 Dead letter queue configuration with RabbitMQ
 
+Sample project used in [http://zoltanaltfatter.com/2016/09/06/dead-letter-queue-configuration-rabbitmq/](http://zoltanaltfatter.com/2016/09/06/dead-letter-queue-configuration-rabbitmq/)
+
 1. Build the project
 
 ```
