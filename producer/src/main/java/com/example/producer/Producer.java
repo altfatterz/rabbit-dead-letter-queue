@@ -27,7 +27,7 @@ public class Producer {
         this.amqpTemplate = amqpTemplate;
     }
 
-    @Scheduled(fixedDelay = 1000L)
+    @Scheduled(fixedDelay = 5000L)
     public void send() {
 
         PaymentOrder paymentOrder = new PaymentOrder(

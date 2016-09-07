@@ -8,6 +8,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -20,7 +21,7 @@ public class Consumer {
 
     @RabbitListener(queues = Constants.INCOMING_QUEUE_NAME)
     public void process(@Payload PaymentOrder paymentOrder) throws InsufficientFundsException {
-        logger.info("Processing payload \'{}\'", paymentOrder);
+        logger.info("Processing at \'{}\' payload \'{}\'", new Date(), paymentOrder);
 
         if (new Random().nextBoolean()) {
             throw new InsufficientFundsException("insufficient funds on account " + paymentOrder.getFrom());
